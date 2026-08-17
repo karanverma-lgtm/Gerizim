@@ -361,35 +361,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Clientele Showcase with Real Corporate Logos
+  // 6. Clientele Showcase with 20 Official Corporate Clients
   const complianceClients = [
-    { name: 'FROG CELLSAT PVT. LTD.', logo: '/logos/frog_cellsat.svg', cat: 'Telecom Equipment' },
-    { name: 'KNP ARISES GREEN ENERGY', logo: '/logos/knp_arises.svg', cat: 'Green Energy & Solar' },
-    { name: 'ML OUTSOURCING SERVICES', logo: '/logos/ml_outsourcing.svg', cat: 'Business Outsourcing' },
-    { name: 'MODERN SAVITRI PUBLIC SCHOOL', logo: '/logos/savitri_school.svg', cat: 'Educational Institution' },
-    { name: 'HUMBOLDT WEDAG INDIA', logo: '/logos/humboldt_wedag.svg', cat: 'Plant Engineering' },
-    { name: 'BRAHMA CITY PRIVATE LTD', logo: '/logos/brahma_city.svg', cat: 'Real Estate & Infra' },
-    { name: 'IDBI BANK LTD.', logo: '/logos/idbi_bank.svg', cat: 'Commercial Banking' },
-    { name: 'FABLE STREET LIFESTYLE', logo: '/logos/fablestreet.svg', cat: "Women's Apparel" },
-    { name: 'SHINY MEDICAL CENTRE', logo: '/logos/shiny_medical.svg', cat: 'Healthcare & Medical' },
-    { name: 'DR. KANWAL RAJ KANWAR', logo: '/logos/dr_kanwal.svg', cat: 'Specialist Clinic' },
-    { name: 'NAYAN INDIA SCIENCE & TECH', logo: '/logos/nayan_tech.svg', cat: 'AI Traffic Tech' }
+    { name: 'M/s BRAHMA CENTER DEVELOPMENT PVT. LTD.', logo: '/logos/brahma_center.svg', cat: 'Real Estate & Infra' },
+    { name: 'M/s BRAHMA CITY PRIVATE LIMITED', logo: '/logos/brahma_city.svg', cat: 'Township & Infra' },
+    { name: 'M/s COLOSSUSTEX PRIVATE LIMITED', logo: '/logos/colossustex.svg', cat: 'Yarn & Textiles' },
+    { name: 'M/s CROPCOIN TECHNOLOGIES PVT. LTD.', logo: '/logos/cropcoin.svg', cat: 'AgriTech & Fintech' },
+    { name: 'M/S FABLE STREET LIFESTYLE SOLUTIONS', logo: '/logos/fablestreet.svg', cat: "Women's Apparel" },
+    { name: 'M/s. FROG SERVICES PVT LTD.', logo: '/logos/frog_services.svg', cat: 'Telecom Operations' },
+    { name: 'M/s. FROG INNOVATIONS LTD.', logo: '/logos/frog_innovations.svg', cat: 'R&D Telecom Tech' },
+    { name: 'M/s IDBI BANK LTD.', logo: '/logos/idbi_bank.svg', cat: 'Commercial Banking' },
+    { name: 'M/s MAAR TELECOM PVT LTD.', logo: '/logos/maar_telecom.svg', cat: 'Network Infrastructure' },
+    { name: 'M/s ML OUTSOURCING SERVICES PVT LTD.', logo: '/logos/ml_outsourcing.svg', cat: 'Business Outsourcing' }
   ];
 
-  const recruitmentClients = [
-    { name: 'MANLIFT INDIA PVT LTD', logo: '/logos/manlift.svg', cat: 'Aerial Work Platforms' },
-    { name: 'KASPER ENGINEERING', logo: '/logos/kasper_eng.svg', cat: 'Solar Engineering' },
-    { name: 'BODYCARE CREATION', logo: '/logos/bodycare.svg', cat: 'Apparel & Intimates' },
-    { name: 'ISEARCH SOLUTION', logo: '/logos/isearch.svg', cat: 'Digital Tech Agency' },
-    { name: 'KISSAN DIETECH', logo: '/logos/kissan_dietech.svg', cat: 'Agri Tech & Diet' },
-    { name: 'MUKLUK SHOE ASSOCIATION', logo: '/logos/mukluk_shoe.svg', cat: 'Footwear Manufacturing' },
-    { name: 'STIC YOUTH TRAVEL', logo: '/logos/stic_travel.svg', cat: 'Aviation & Travel' },
-    { name: 'UNILINE ENERGY SYSTEM', logo: '/logos/uniline.svg', cat: 'UPS & Power Systems' },
-    { name: 'VAIDYARX PRIVATE LTD', logo: '/logos/vaidyarx.svg', cat: 'Pharma & Biotech' },
-    { name: 'GROWEON DIGITAL', logo: '/logos/groweon.svg', cat: 'Growth Marketing' },
-    { name: 'TRIDENT – OBEROI GROUP', logo: '/logos/trident_oberoi.svg', cat: 'Luxury Hospitality' },
-    { name: 'SUVIDHA GROUPS', logo: '/logos/suvidha_group.svg', cat: 'Financial Services' },
-    { name: 'MSAFE EQUIPEMENT LTD', logo: '/logos/msafe_equip.svg', cat: 'Scaffolding Systems' }
+  const corporateClients = [
+    { name: 'M/s MINDLANCE INDIA PRIVATE LIMITED', logo: '/logos/mindlance.svg', cat: 'Global IT Staffing' },
+    { name: 'M/s MODERN SAVITRI PUBLIC SCHOOL', logo: '/logos/savitri_school.svg', cat: 'Educational Institution' },
+    { name: 'M/s NAMAM INFRA ENGINEERING PVT. LTD.', logo: '/logos/namam_infra.svg', cat: 'EPC Civil Engineering' },
+    { name: 'M/s THE NEW GENERATION TRUST', logo: '/logos/new_gen_trust.svg', cat: 'Social Enterprise' },
+    { name: 'M/s PGM VENTURES LLP', logo: '/logos/pgm_ventures.svg', cat: 'Venture Investments' },
+    { name: 'M/S SHINY MEDICAL CENTRE', logo: '/logos/shiny_medical.svg', cat: 'Healthcare & Medical' },
+    { name: 'M/S DR. K.R.S KANWAR', logo: '/logos/dr_krs_kanwar.svg', cat: 'Specialist Clinic' },
+    { name: 'M/s DR. KANWAR MARITIME CLINIC', logo: '/logos/dr_kanwar_maritime.svg', cat: 'Maritime Medicals' },
+    { name: 'M/s SHINY MEDICAL CENTRE (OPC) PVT LTD', logo: '/logos/shiny_medical_opc.svg', cat: 'Corporate Medical' },
+    { name: 'M/s SHAMBHU TECHNOLOGY SERVICES PVT LTD', logo: '/logos/shambhu_tech.svg', cat: 'Cloud & Enterprise IT' }
   ];
 
   const clientContainer = document.getElementById('client-grid-container');
@@ -417,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tabRecruitment.addEventListener('click', () => {
       tabRecruitment.classList.add('active');
       tabCompliance.classList.remove('active');
-      renderClients(recruitmentClients);
+      renderClients(corporateClients);
     });
   }
 

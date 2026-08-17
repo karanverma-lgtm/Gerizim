@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#7C2D12"/>
+  <g transform="translate(16, 16)">
+    <path d="M4 32L19 4l15 28H4z" fill="none" stroke="#F97316" stroke-width="2.5"/>
+    <path d="M12 24h14" stroke="#FBBF24" stroke-width="2"/>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF">NAMAM INFRA</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#FDBA74">ENGINEERING PVT LTD</text>
+</svg>

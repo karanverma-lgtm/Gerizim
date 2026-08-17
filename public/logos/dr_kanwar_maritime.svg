@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#0369A1"/>
+  <g transform="translate(16, 16)">
+    <circle cx="19" cy="19" r="15" fill="none" stroke="#7DD3FC" stroke-width="2"/>
+    <path d="M19 8v16M13 14h12M12 24c4 3 10 3 14 0" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text x="64" y="33" font-family="'Outfit', sans-serif" font-weight="800" font-size="12.5" fill="#FFFFFF">DR. KANWAR MARITIME</text>
+  <text x="64" y="49" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#7DD3FC">MEDICAL CLINIC</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#4338CA"/>
+  <g transform="translate(16, 16)">
+    <path d="M6 32V6l13 14L32 6v26" fill="none" stroke="#818CF8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="900" font-size="15" fill="#FFFFFF">MINDLANCE</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#C7D2FE">INDIA PRIVATE LIMITED</text>
+</svg>

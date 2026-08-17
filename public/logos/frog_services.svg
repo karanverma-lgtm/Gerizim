@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#0F172A"/>
+  <g transform="translate(16, 15)">
+    <rect x="4" y="4" width="30" height="30" rx="8" fill="none" stroke="#38BDF8" stroke-width="2.5"/>
+    <path d="M12 24l7-10 7 10" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF">FROG SERVICES</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#38BDF8">TELECOM MANAGED PVT LTD</text>
+</svg>
