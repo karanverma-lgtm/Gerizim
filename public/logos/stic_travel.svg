@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#0369A1"/>
+  <g transform="translate(16, 16)">
+    <circle cx="19" cy="19" r="15" fill="none" stroke="#7DD3FC" stroke-width="2"/>
+    <path d="M30 22l-11-7-11 7 4-10-4-3 6-1 5-7 5 7 6 1-4 3 4 10z" fill="#FF7A00"/>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="900" font-size="15" fill="#FFFFFF">STIC TRAVEL</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#7DD3FC">AVIATION &amp; TOURISM</text>
+</svg>

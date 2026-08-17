@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#312E81"/>
+  <g transform="translate(16, 16)">
+    <path d="M4 19s6-10 15-10 15 10 15 10-6 10-15 10S4 19 4 19z" fill="none" stroke="#818CF8" stroke-width="2.5"/>
+    <circle cx="19" cy="19" r="6" fill="#00E5FF"/>
+    <circle cx="19" cy="19" r="2.5" fill="#312E81"/>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF">NAYAN TECH</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#00E5FF">AI TRAFFIC &amp; MOBILITY</text>
+</svg>

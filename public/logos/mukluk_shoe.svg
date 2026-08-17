@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#451A03"/>
+  <g transform="translate(16, 16)">
+    <path d="M6 26h26v4H6zM6 18l6-10h14l6 10v8H6z" fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="16" cy="14" r="2" fill="#FBBF24"/>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="800" font-size="13.5" fill="#FFFFFF">MUKLUK SHOE</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#FDE047">FOOTWEAR ASSOC.</text>
+</svg>

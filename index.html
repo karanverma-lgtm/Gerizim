@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerizim HR Solutions Pvt. Ltd. | Statutory Compliance & HR Payroll Consultants</title>
+  <meta name="description" content="Gerizim HR Solutions is India's leading Statutory Compliance, HR Payroll, and Business Process Outsourcing consultancy firm serving multinational & corporate houses across 12+ states.">
+  <meta name="keywords" content="Statutory Compliance India, HR Payroll Outsourcing, Labour Act Compliance, Factory License Procurement, Recruitment Services New Delhi, Gerizim HR">
+  
+  <!-- Favicon / Fonts / Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <!-- Custom Interactive Cursor Follower -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-follower" id="custom-cursor-follower"></div>
+
+  <!-- Floating Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-logo-icon">G</div>
+        <div class="brand-logo-text">
+          <span class="brand-name">Gerizim HR</span>
+          <span class="brand-tagline">Unlimited HR Solutions</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#services" class="nav-link">Core Services</a></li>
+        <li><a href="#calculator" class="nav-link">Calculator</a></li>
+        <li><a href="#acts" class="nav-link">16+ Legal Acts</a></li>
+        <li><a href="#clientele" class="nav-link">Clientele</a></li>
+        <li><a href="#presence" class="nav-link">Pan-India</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+          <i data-lucide="moon" id="theme-icon"></i>
+        </button>
+        <a href="#calculator" class="btn btn-primary nav-cta-desktop">Audit Risk</a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Menu">
+          <i data-lucide="menu" id="menu-icon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Menu (Modern Web Guidance Pattern) -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-logo-icon">G</div>
+        <span class="brand-name">Gerizim HR</span>
+      </div>
+      <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close Menu">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#about" class="mobile-nav-link"><i data-lucide="info"></i> About Us</a></li>
+      <li><a href="#services" class="mobile-nav-link"><i data-lucide="briefcase"></i> Core Services</a></li>
+      <li><a href="#calculator" class="mobile-nav-link"><i data-lucide="calculator"></i> Risk Calculator</a></li>
+      <li><a href="#acts" class="mobile-nav-link"><i data-lucide="scale"></i> 16+ Legal Acts</a></li>
+      <li><a href="#clientele" class="mobile-nav-link"><i data-lucide="users"></i> Clientele</a></li>
+      <li><a href="#presence" class="mobile-nav-link"><i data-lucide="map-pin"></i> Pan-India Reach</a></li>
+      <li><a href="#contact" class="mobile-nav-link"><i data-lucide="phone-call"></i> Contact Us</a></li>
+    </ul>
+    <div class="mobile-drawer-actions">
+      <a href="#calculator" class="btn btn-primary" style="width: 100%; text-align: center;">Evaluate Compliance Risk</a>
+      <a href="tel:991167890" class="btn btn-outline" style="width: 100%; text-align: center;"><i data-lucide="phone"></i> Call +91 991167890</a>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="section-tag">
+          <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+          India's Premier Statutory Compliance Consultancy
+        </div>
+        
+        <h1 class="hero-title">
+          Unlimited HR & <span class="text-gradient">Statutory Compliance</span> Solutions
+        </h1>
+        
+        <p class="hero-description">
+          Gerizim HR Solutions Pvt. Ltd. empowers corporate houses, MNCs, and transnational organizations to navigate complex labor laws, manage risk, and streamline end-to-end payroll & manpower operations.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#calculator" class="btn btn-primary">
+            <i data-lucide="calculator">="width: 18px; height: 18px;"</i>
+            Calculate Compliance Risk
+          </a>
+          <a href="#acts" class="btn btn-outline">
+            Explore 16+ Labor Statutes
+            <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+          </a>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card glass-card">
+            <div class="metric-icon">
+              <i data-lucide="map-pin"></i>
+            </div>
+            <div class="metric-info">
+              <span class="metric-number">12+</span>
+              <span class="metric-label">States Pan-India</span>
+            </div>
+          </div>
+          
+          <div class="metric-card glass-card">
+            <div class="metric-icon">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <div class="metric-info">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Audit Readiness</span>
+            </div>
+          </div>
+
+          <div class="metric-card glass-card">
+            <div class="metric-icon">
+              <i data-lucide="scale"></i>
+            </div>
+            <div class="metric-info">
+              <span class="metric-number">16+</span>
+              <span class="metric-label">Labor Acts Covered</span>
+            </div>
+          </div>
+
+          <div class="metric-card glass-card">
+            <div class="metric-icon">
+              <i data-lucide="building-2"></i>
+            </div>
+            <div class="metric-info">
+              <span class="metric-number">25+</span>
+              <span class="metric-label">Enterprise Clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="glass-card hero-main-card">
+          <div class="card-glow-overlay"></div>
+          <img src="/extracted_images/page_renders/page_1.png" alt="Gerizim HR Solutions Corporate Profile Overview" class="hero-img">
+          
+          <div class="badge-float">
+            <div class="badge-float-icon">
+              <i data-lucide="award"></i>
+            </div>
+            <div class="badge-float-content">
+              <strong>India's Top Compliance HR Firm</strong>
+              <span>Serving MNCs & Enterprises</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Us Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <span class="section-tag">Company Review</span>
+        <h2 class="section-title">About <span class="text-gradient">Gerizim HR Solutions</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Navigating complex legal frameworks so businesses remain 100% compliant while focusing on core operations with peace of mind.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="glass-card about-card">
+          <h3 class="about-card-title">Industry Leadership & Expertise</h3>
+          <p class="about-card-desc">
+            Gerizim is India’s leading Statutory Compliance Consultancy firm, serving top corporate houses, including multinational and transnational corporations across diverse sectors.
+          </p>
+          <p class="about-card-desc">
+            Business Process Outsourcing has drawn its focus in the current corporate world, wherein the companies are more focused towards the core operations and the non-core operations being outsourced to save cost, time and increase efficiency. Gerizim has the required infrastructure and the expertise to cater to the needs for the required sectors. As a part of the total business process solutions, Gerizim undertakes business-outsourcing activities viz.:
+          </p>
+          
+          <div class="about-checklist">
+            <div class="checklist-item">
+              <i data-lucide="check-circle-2" class="check-icon"></i>
+              <span>Full compliance of statutory functions under Shops Act, Contract Labour, PF, ESI & Construction Workers Act.</span>
+            </div>
+            <div class="checklist-item">
+              <i data-lucide="check-circle-2" class="check-icon"></i>
+              <span>Filing returns under all labor statutes and managing complete HRD activities.</span>
+            </div>
+            <div class="checklist-item">
+              <i data-lucide="check-circle-2" class="check-icon"></i>
+              <span>Initial setting up of the company, RoC registration, obtaining licenses and other non-core business functions.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card about-image-card">
+          <img src="/extracted_images/page_renders/page_2.png" alt="Company Review & About Us Details" class="responsive-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services Section -->
+  <section class="section" id="services" style="background: var(--bg-card-hover);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <span class="section-tag">Business Process Outsourcing</span>
+        <h2 class="section-title">Core <span class="text-gradient">Services & Solutions</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Comprehensive BPO, compliance, license procurement, and talent acquisition tailored to your organizational needs.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="glass-card service-card">
+          <div class="service-icon">
+            <i data-lucide="file-text"></i>
+          </div>
+          <h3 class="service-title">Statutory Compliance Management</h3>
+          <p class="service-desc">
+            Complete audit readiness, maintaining statutory registers, handling labor inspection notices, and mitigating non-compliance penalties across multi-state operations.
+          </p>
+          <a href="#contact" class="service-link">Learn More <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-icon">
+            <i data-lucide="stamp"></i>
+          </div>
+          <h3 class="service-title">License Procurement Under Various Acts</h3>
+          <p class="service-desc">
+            Fast-track registration and license procurement under Shops & Establishments, Contract Labour Act, Factories Act, and Building Construction Workers Act.
+          </p>
+          <a href="#contact" class="service-link">Learn More <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-icon">
+            <i data-lucide="folder-check"></i>
+          </div>
+          <h3 class="service-title">Filing Returns & Documentation</h3>
+          <p class="service-desc">
+            Timely compilation and submission of monthly, half-yearly, and annual statutory returns for EPF, ESI, LWF, Professional Tax, Bonus, and Gratuity.
+          </p>
+          <a href="#contact" class="service-link">Learn More <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-icon">
+            <i data-lucide="users"></i>
+          </div>
+          <h3 class="service-title">Recruitment / Manpower Services</h3>
+          <p class="service-desc">
+            End-to-end talent sourcing, executive search, contract staffing, and workforce management for engineering, hospitality, retail, and tech enterprises.
+          </p>
+          <a href="#contact" class="service-link">Learn More <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-icon">
+            <i data-lucide="building-2"></i>
+          </div>
+          <h3 class="service-title">Company Setup & Registration</h3>
+          <p class="service-desc">
+            Initial corporate setup, Registrar of Companies (RoC) registration, obtaining operational permits, and setting up non-core business infrastructure.
+          </p>
+          <a href="#contact" class="service-link">Learn More <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <div class="glass-card service-card" style="border: 2px dashed var(--border-accent); background: rgba(144, 193, 38, 0.05);">
+          <div class="service-icon" style="background: var(--color-primary); color: white;">
+            <i data-lucide="sparkles"></i>
+          </div>
+          <h3 class="service-title">Custom HR Outsourcing</h3>
+          <p class="service-desc">
+            Need a tailored HR BPO package combining payroll processing, legal audit, and contract staffing? Talk to our compliance experts today.
+          </p>
+          <a href="#contact" class="btn btn-primary" style="margin-top: 12px; width: 100%;">Custom Proposal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Compliance Cost & Risk Calculator Widget -->
+  <section class="section" id="calculator">
+    <div class="container">
+      <div class="calc-wrapper">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <span class="section-tag">Interactive Tool</span>
+          <h2 class="section-title">Statutory <span class="text-gradient">Compliance Risk Estimator</span></h2>
+          <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto;">
+            Select your industry parameters below to evaluate your legal compliance exposure and receive instant recommendations.
+          </p>
+        </div>
+
+        <div class="calc-grid">
+          <form class="calc-form" id="calc-form">
+            <div class="form-group">
+              <label class="form-label" for="industry-type">Select Industry & Establishment Type</label>
+              <select class="form-select" id="industry-type">
+                <option value="commercial">Commercial Office / IT / ITES</option>
+                <option value="factory">Manufacturing / Factory</option>
+                <option value="construction">Building & Construction</option>
+                <option value="hotel">Hospitality & Retail Chain</option>
+                <option value="mnc">MNC / Transnational Enterprise</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="emp-count">Total Workforce Count (Direct + Contract)</label>
+              <select class="form-select" id="emp-count">
+                <option value="small">1 - 20 Employees</option>
+                <option value="medium" selected>21 - 100 Employees</option>
+                <option value="large">101 - 500 Employees</option>
+                <option value="enterprise">500+ Employees</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="state-select">Primary Operating Region</label>
+              <select class="form-select" id="state-select">
+                <option value="delhi">Delhi NCR</option>
+                <option value="haryana">Haryana</option>
+                <option value="up">Uttar Pradesh</option>
+                <option value="mh">Maharashtra</option>
+                <option value="ka">Karnataka</option>
+                <option value="tn">Tamil Nadu</option>
+                <option value="panindia">Pan-India (Multi-State)</option>
+              </select>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="btn-run-calc" style="width: 100%;">
+              <i data-lucide="sparkles"></i> Evaluate Risk & Audit Readiness
+            </button>
+          </form>
+
+          <div class="calc-result-card" id="calc-results">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 700; font-size: 1.1rem;">Compliance Exposure</span>
+              <span class="risk-badge low" id="risk-level-badge">
+                <i data-lucide="shield-check" style="width: 14px;"></i> Moderate Exposure
+              </span>
+            </div>
+
+            <div style="padding: 20px; background: rgba(0, 102, 51, 0.05); border-radius: var(--radius-sm); border-left: 4px solid var(--color-primary);">
+              <span style="display: block; font-size: 0.85rem; color: var(--text-muted);">Estimated Mandatory Statutes</span>
+              <strong style="font-size: 1.8rem; color: var(--color-primary);" id="statute-count-display">12 Acts Active</strong>
+            </div>
+
+            <div>
+              <strong style="display: block; margin-bottom: 8px; font-size: 0.95rem;">Key Applicable Statutes:</strong>
+              <ul id="applicable-acts-list" style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: var(--text-muted);">
+                <li><i data-lucide="check" style="width: 16px; color: var(--color-accent); display: inline-block; vertical-align: middle;"></i> EPF & Miscellaneous Provisions Act 1952</li>
+                <li><i data-lucide="check" style="width: 16px; color: var(--color-accent); display: inline-block; vertical-align: middle;"></i> ESI Act 1948 & Labour Welfare Fund</li>
+                <li><i data-lucide="check" style="width: 16px; color: var(--color-accent); display: inline-block; vertical-align: middle;"></i> Shops & Establishments Registration</li>
+                <li><i data-lucide="check" style="width: 16px; color: var(--color-accent); display: inline-block; vertical-align: middle;"></i> Minimum Wages & Bonus Act Compliance</li>
+              </ul>
+            </div>
+
+            <a href="#contact" class="btn btn-accent" style="width: 100%; text-align: center;">
+              Book Free Compliance Audit Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Compliance Coverage (16 Acts) -->
+  <section class="section" id="acts">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <span class="section-tag">Statutory Coverage</span>
+        <h2 class="section-title">16+ Legal <span class="text-gradient">Acts & Statutes</span> Managed</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Gerizim provides end-to-end statutory legal coverage across all labor, welfare, social security, and employment laws in India.
+        </p>
+      </div>
+
+      <div class="acts-filter-bar">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-filter="all">All Statutes (16)</button>
+          <button class="filter-pill" data-filter="wages">Welfare & Wages</button>
+          <button class="filter-pill" data-filter="social">Social Security (PF/ESI)</button>
+          <button class="filter-pill" data-filter="factory">Establishment & Factory</button>
+        </div>
+
+        <div class="search-box">
+          <i data-lucide="search" style="width: 18px;"></i>
+          <input type="text" id="acts-search-input" placeholder="Search act (e.g. Gratuity, Bonus)...">
+        </div>
+      </div>
+
+      <div class="acts-grid" id="acts-container">
+        <!-- Dynamically Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Native Modal Dialog for Act Details -->
+  <dialog id="act-modal" closedby="any">
+    <div class="modal-header">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="service-icon" style="width: 40px; height: 40px; margin-bottom: 0;">
+          <i data-lucide="scale" style="width: 20px;"></i>
+        </div>
+        <h3 id="modal-act-title" style="font-size: 1.3rem;">Act Title</h3>
+      </div>
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+    </div>
+    <div class="modal-body" id="modal-act-body" style="color: var(--text-muted); font-size: 0.975rem;">
+      <!-- Content populated by JS -->
+    </div>
+    <div style="margin-top: 24px; text-align: right;">
+      <a href="#contact" class="btn btn-primary" onclick="document.getElementById('act-modal').close()">Request Audit for this Act</a>
+    </div>
+  </dialog>
+
+  <!-- Our Value Proposition ("Why Choose Gerizim?") -->
+  <section class="section" id="value-prop" style="background: var(--bg-card-hover);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <span class="section-tag">Value Proposition</span>
+        <h2 class="section-title">Why Choose <span class="text-gradient">Gerizim?</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Delivering unmatched legal protection, operational speed, and cost efficiency for enterprises across India.
+        </p>
+      </div>
+
+      <div class="value-grid">
+        <div class="glass-card service-card">
+          <div class="service-icon">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <h3 class="service-title">Multi-Location Expertise</h3>
+          <p class="service-desc">
+            Seamless statutory compliance management across 12+ Indian states with dedicated local compliance officers.
+          </p>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-icon">
+            <i data-lucide="shield-alert"></i>
+          </div>
+          <h3 class="service-title">Legal Risk Mitigation</h3>
+          <p class="service-desc">
+            Tailored advisory to eliminate legal penalties, inspection risks, and workforce non-compliance liabilities.
+          </p>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-icon">
+            <i data-lucide="cpu"></i>
+          </div>
+          <h3 class="service-title">Seamless Integration</h3>
+          <p class="service-desc">
+            Smooth plug-and-play integration with your internal HR, Finance, and Operations processes.
+          </p>
+        </div>
+
+        <div class="glass-card service-card">
+          <div class="service-icon">
+            <i data-lucide="trending-up"></i>
+          </div>
+          <h3 class="service-title">Cost & Time Saving</h3>
+          <p class="service-desc">
+            Save up to 40% in statutory administration costs while freeing up leadership to focus on core growth.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clientele Showcase -->
+  <section class="section" id="clientele">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <span class="section-tag">Clientele</span>
+        <h2 class="section-title">Our Trusted <span class="text-gradient">Enterprise Partners</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Proudly serving leading corporate houses, financial institutions, manufacturers, and lifestyle brands.
+        </p>
+      </div>
+
+      <div class="clientele-tabs">
+        <button class="tab-btn active" id="tab-compliance">Compliance Partners (11)</button>
+        <button class="tab-btn" id="tab-recruitment">Recruitment Partners (13)</button>
+      </div>
+
+      <div class="client-grid" id="client-grid-container">
+        <!-- Dynamically rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Geographic Presence (Pan-India) -->
+  <section class="section" id="presence" style="background: var(--bg-card-hover); overflow: hidden;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span class="section-tag">Geographic Presence</span>
+        <h2 class="section-title">Nationwide Associates <span class="text-gradient">– Pan India</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Extensive compliance network covering 12 major economic hubs across India. Hover over any state card to pause carousel.
+        </p>
+      </div>
+    </div>
+
+    <!-- Running Infinite Carousel Track -->
+    <div class="carousel-track-wrapper">
+      <div class="carousel-track" id="states-carousel-track">
+        <!-- Dynamically rendered and duplicated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us & Corporate Offices -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Connect with Our <span class="text-gradient">Compliance Experts</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Contact our corporate or registered offices in New Delhi for a free compliance consultation or custom HR proposal.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="office-cards">
+          <div class="glass-card office-card">
+            <span class="office-type">Corporate Head Office</span>
+            <h3 class="office-title">Gerizim HR Solutions Pvt. Ltd.</h3>
+            <p style="color: var(--text-muted); margin-bottom: 16px;">
+              <i data-lucide="map-pin" style="width: 18px; color: var(--color-accent); display: inline-block; vertical-align: middle;"></i>
+              E-6, 4th Floor, Pawanputra – II, Export Enclave, Khanpur, New Delhi – 110062
+            </p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.9rem;">
+              <span><i data-lucide="mail" style="width: 16px; color: var(--color-primary);"></i> anjana@gerizimhr.com</span>
+              <span><i data-lucide="mail" style="width: 16px; color: var(--color-primary);"></i> deleep@gerizimhr.com</span>
+            </div>
+            <div style="margin-top: 12px; font-size: 0.9rem;">
+              <span><i data-lucide="phone" style="width: 16px; color: var(--color-primary);"></i> +91 991167890 / +91 9873716903</span>
+            </div>
+          </div>
+
+          <div class="glass-card office-card">
+            <span class="office-type">Registered Office</span>
+            <h3 class="office-title">Gerizim HR Legal Cell</h3>
+            <p style="color: var(--text-muted); margin-bottom: 16px;">
+              <i data-lucide="building" style="width: 18px; color: var(--color-accent); display: inline-block; vertical-align: middle;"></i>
+              No.2, GF, Maruti Apartments, 149/2, Devli, Khanpur, New Delhi – 110062
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card contact-form-card">
+          <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Send Us a Message</h3>
+          <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Rajesh Sharma" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Corporate Email *</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-service">Service Required</label>
+              <select id="contact-service" class="form-select">
+                <option value="compliance">Statutory Compliance Management</option>
+                <option value="payroll">HR & Payroll Outsourcing</option>
+                <option value="recruitment">Recruitment / Executive Search</option>
+                <option value="licenses">License Procurement & RoC Setup</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-msg">Message / Requirements</label>
+              <textarea id="contact-msg" class="form-input" rows="4" placeholder="Tell us about your organization and compliance needs..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i data-lucide="send"></i> Submit Consultation Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: var(--bg-card); padding: 40px 0; border-top: 1px solid var(--border-subtle); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 24px;">
+        <div class="brand-logo">
+          <div class="brand-logo-icon" style="width: 36px; height: 36px; font-size: 1rem;">G</div>
+          <span class="brand-name" style="font-size: 1.1rem;">Gerizim HR Solutions</span>
+        </div>
+        <p>© 2026 Gerizim HR Solutions Pvt. Ltd. All rights reserved. | Unlimited HR Solutions</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Action Footer Bar (Mobile Best Practice Pattern) -->
+  <div class="mobile-sticky-footer" id="mobile-sticky-footer">
+    <a href="tel:991167890" class="mobile-sticky-btn">
+      <i data-lucide="phone"></i>
+      <span>Call Expert</span>
+    </a>
+    <a href="#calculator" class="mobile-sticky-btn active">
+      <i data-lucide="calculator"></i>
+      <span>Audit Risk</span>
+    </a>
+    <a href="#contact" class="mobile-sticky-btn">
+      <i data-lucide="mail"></i>
+      <span>Consultation</span>
+    </a>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#4C1D95"/>
+  <g transform="translate(16, 16)">
+    <path d="M4 26l9-9 6 6 13-13M32 10v10m0-10H22" stroke="#A78BFA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF">GROWEON</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#C4B5FD">DIGITAL GROWTH</text>
+</svg>

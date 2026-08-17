@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#991B1B"/>
+  <g transform="translate(16, 16)">
+    <path d="M21 2L7 20h12l-2 14 14-18H20l2-14z" fill="#FBBF24"/>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="900" font-size="14.5" fill="#FFFFFF">UNILINE</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#FDE047">POWER SYSTEMS</text>
+</svg>

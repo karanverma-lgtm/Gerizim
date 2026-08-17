@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#1C1917"/>
+  <g transform="translate(16, 16)">
+    <path d="M7 26L4 8l9 8 6-12 6 12 9-8-3 18H7zm22 5c0 1-.8 1.5-1.5 1.5H10.5c-.7 0-1.5-.5-1.5-1.5v-1.5h20V31z" fill="#EAB308"/>
+  </g>
+  <text x="64" y="33" font-family="'Outfit', sans-serif" font-weight="800" font-size="13" fill="#FFFFFF">TRIDENT HOTELS</text>
+  <text x="64" y="49" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#FDE047">OBEROI GROUP</text>
+</svg>

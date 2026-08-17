@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#1C1917"/>
+  <g transform="translate(16, 16)">
+    <circle cx="19" cy="19" r="16" fill="none" stroke="#E0A96D" stroke-width="1.8"/>
+    <text x="19" y="25" font-family="'Georgia', serif" font-weight="bold" font-size="17" fill="#E0A96D" text-anchor="middle">FS</text>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="700" font-size="14" fill="#FFFFFF" letter-spacing="1">FABLESTREET</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="500" font-size="9.5" fill="#E0A96D">WOMEN'S LIFESTYLE</text>
+</svg>

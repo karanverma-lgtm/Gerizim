@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#005A36"/>
+  <g transform="translate(16, 15)">
+    <path d="M19 2c-5 6-9 13-9 20 0 6 4 10 9 10s9-4 9-10c0-7-4-14-9-20z" fill="#FF6B00"/>
+    <path d="M19 8c-3 4-5 8-5 13 0 4 2 7 5 7s5-3 5-7c0-5-2-9-5-13z" fill="#FFFFFF"/>
+    <circle cx="19" cy="18" r="2.5" fill="#FF6B00"/>
+  </g>
+  <text x="62" y="35" font-family="'Outfit', sans-serif" font-weight="900" font-size="17" fill="#FFFFFF" letter-spacing="1">IDBI BANK</text>
+  <text x="62" y="51" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#FFC72C">BANKING FOR ALL</text>
+</svg>

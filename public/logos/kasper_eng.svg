@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <rect width="240" height="70" rx="14" fill="#78350F"/>
+  <g transform="translate(16, 16)">
+    <path d="M20 3L7 19h11l-2 13 13-16H18l2-13z" fill="#F59E0B"/>
+  </g>
+  <text x="64" y="34" font-family="'Outfit', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF">KASPER ENG.</text>
+  <text x="64" y="50" font-family="'Inter', sans-serif" font-weight="600" font-size="9.5" fill="#FBBF24">SOLAR ENGINEERING</text>
+</svg>
