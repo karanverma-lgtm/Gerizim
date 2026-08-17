@@ -103,12 +103,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Handle Logout
+  window.handleAdminLogout = function(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    sessionStorage.removeItem('gerizim_admin_token');
+    localStorage.removeItem('gerizim_admin_token');
+    showToast('Logged out successfully.', 'info');
+    setTimeout(() => {
+      window.location.reload();
+    }, 400);
+  };
+
   if (logoutBtn) {
-    logoutBtn.addEventListener('click', () => {
-      sessionStorage.removeItem('gerizim_admin_token');
-      showToast('Logged out successfully.', 'info');
-      showLogin();
-    });
+    logoutBtn.addEventListener('click', window.handleAdminLogout);
   }
 
   function showLogin() {
