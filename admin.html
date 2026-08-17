@@ -261,10 +261,19 @@
           </div>
         </div>
 
+        <div style="display: flex; align-items: center; gap: 6px; background: var(--bg-card-hover); padding: 4px; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">
+          <button id="nav-tab-leads" class="tab-btn active" style="padding: 6px 16px; font-size: 0.825rem; border-radius: var(--radius-full);">
+            <i data-lucide="list" style="width: 14px; vertical-align: middle;"></i> Leads Manager
+          </button>
+          <button id="nav-tab-analytics" class="tab-btn" style="padding: 6px 16px; font-size: 0.825rem; border-radius: var(--radius-full);">
+            <i data-lucide="bar-chart-3" style="width: 14px; vertical-align: middle;"></i> Analytics &amp; Insights
+          </button>
+        </div>
+
         <div style="display: flex; align-items: center; gap: 12px;">
           <div style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(16, 185, 129, 0.12); border-radius: var(--radius-full); font-size: 0.775rem; color: #059669; font-weight: 700;">
             <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
-            <span>Firestore Sync Active</span>
+            <span>Firestore Sync</span>
           </div>
 
           <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
@@ -280,94 +289,174 @@
 
     <!-- Main CRM Content Container -->
     <main class="container" style="padding-top: 24px; padding-bottom: 60px;">
-      <!-- KPI Stats Grid -->
-      <div class="crm-kpi-grid">
-        <div class="glass-card crm-kpi-card">
-          <div class="crm-kpi-icon">
-            <i data-lucide="inbox"></i>
+      <!-- SUB-VIEW 1: LEADS MANAGER -->
+      <div id="subview-leads-manager">
+        <!-- KPI Stats Grid -->
+        <div class="crm-kpi-grid">
+          <div class="glass-card crm-kpi-card">
+            <div class="crm-kpi-icon">
+              <i data-lucide="inbox"></i>
+            </div>
+            <div>
+              <div class="crm-kpi-value" id="kpi-total-leads">0</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Total Enquiries</div>
+            </div>
           </div>
-          <div>
-            <div class="crm-kpi-value" id="kpi-total-leads">0</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Total Enquiries</div>
+
+          <div class="glass-card crm-kpi-card">
+            <div class="crm-kpi-icon" style="background: rgba(59, 130, 246, 0.15); color: #2563EB;">
+              <i data-lucide="bell"></i>
+            </div>
+            <div>
+              <div class="crm-kpi-value" id="kpi-new-leads" style="color: #2563EB;">0</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">New Enquiries</div>
+            </div>
+          </div>
+
+          <div class="glass-card crm-kpi-card">
+            <div class="crm-kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #D97706;">
+              <i data-lucide="loader"></i>
+            </div>
+            <div>
+              <div class="crm-kpi-value" id="kpi-in-progress" style="color: #D97706;">0</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">In Progress</div>
+            </div>
+          </div>
+
+          <div class="glass-card crm-kpi-card">
+            <div class="crm-kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #059669;">
+              <i data-lucide="check-circle-2"></i>
+            </div>
+            <div>
+              <div class="crm-kpi-value" id="kpi-converted" style="color: #059669;">0</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Converted Clients</div>
+            </div>
           </div>
         </div>
 
-        <div class="glass-card crm-kpi-card">
-          <div class="crm-kpi-icon" style="background: rgba(59, 130, 246, 0.15); color: #2563EB;">
-            <i data-lucide="bell"></i>
+        <!-- Action & Filter Toolbar -->
+        <div class="glass-card crm-control-bar">
+          <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; flex: 1;">
+            <div class="search-box" style="position: relative; flex: 1; min-width: 240px;">
+              <i data-lucide="search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; color: var(--text-muted);"></i>
+              <input type="text" id="crm-search-input" class="form-input" placeholder="Search by name, company, email, or service..." style="padding-left: 38px;">
+            </div>
+
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="status-filter-pills">
+              <button class="filter-pill active" data-status="ALL">All</button>
+              <button class="filter-pill" data-status="New">New</button>
+              <button class="filter-pill" data-status="In Progress">In Progress</button>
+              <button class="filter-pill" data-status="Contacted">Contacted</button>
+              <button class="filter-pill" data-status="Converted">Converted</button>
+            </div>
           </div>
-          <div>
-            <div class="crm-kpi-value" id="kpi-new-leads" style="color: #2563EB;">0</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">New Enquiries</div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <button id="btn-export-csv" class="btn" style="background: rgba(0, 102, 51, 0.1); color: var(--color-primary); border: 1px solid var(--border-accent);">
+              <i data-lucide="download"></i> Export CSV
+            </button>
+            <button id="btn-seed-lead" class="btn btn-primary">
+              <i data-lucide="plus-circle"></i> Add Test Lead
+            </button>
           </div>
         </div>
 
-        <div class="glass-card crm-kpi-card">
-          <div class="crm-kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #D97706;">
-            <i data-lucide="loader"></i>
-          </div>
-          <div>
-            <div class="crm-kpi-value" id="kpi-in-progress" style="color: #D97706;">0</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">In Progress</div>
-          </div>
-        </div>
-
-        <div class="glass-card crm-kpi-card">
-          <div class="crm-kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #059669;">
-            <i data-lucide="check-circle-2"></i>
-          </div>
-          <div>
-            <div class="crm-kpi-value" id="kpi-converted" style="color: #059669;">0</div>
-            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Converted Clients</div>
-          </div>
+        <!-- Leads Table Container -->
+        <div class="table-wrapper">
+          <table class="crm-table">
+            <thead>
+              <tr>
+                <th>Client / Company</th>
+                <th>Contact Details</th>
+                <th>Service &amp; Source</th>
+                <th>State Hub</th>
+                <th>Submission Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="crm-leads-tbody">
+              <!-- Dynamically populated from Firestore -->
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <!-- Action & Filter Toolbar -->
-      <div class="glass-card crm-control-bar">
-        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; flex: 1;">
-          <div class="search-box" style="position: relative; flex: 1; min-width: 240px;">
-            <i data-lucide="search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; color: var(--text-muted);"></i>
-            <input type="text" id="crm-search-input" class="form-input" placeholder="Search by name, company, email, or service..." style="padding-left: 38px;">
+      <!-- SUB-VIEW 2: ANALYTICS & BUSINESS INTELLIGENCE DASHBOARD -->
+      <div id="subview-analytics-dashboard" style="display: none;">
+        <!-- Executive Intelligence Overview Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          <div class="glass-card" style="padding: 20px;">
+            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Conversion Rate</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #059669; margin-top: 4px;" id="analytics-conversion-rate">0%</div>
+            <span style="font-size: 0.775rem; color: var(--text-muted);">Inquiries converted to clients</span>
           </div>
 
-          <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="status-filter-pills">
-            <button class="filter-pill active" data-status="ALL">All</button>
-            <button class="filter-pill" data-status="New">New</button>
-            <button class="filter-pill" data-status="In Progress">In Progress</button>
-            <button class="filter-pill" data-status="Contacted">Contacted</button>
-            <button class="filter-pill" data-status="Converted">Converted</button>
+          <div class="glass-card" style="padding: 20px;">
+            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Top Demand Service</span>
+            <div style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary); margin-top: 6px;" id="analytics-top-service">--</div>
+            <span style="font-size: 0.775rem; color: var(--text-muted);">Most requested compliance offering</span>
+          </div>
+
+          <div class="glass-card" style="padding: 20px;">
+            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Top Growth Hub</span>
+            <div style="font-size: 1.3rem; font-weight: 800; color: var(--color-accent); margin-top: 4px;" id="analytics-top-state">--</div>
+            <span style="font-size: 0.775rem; color: var(--text-muted);">Highest volume region</span>
+          </div>
+
+          <div class="glass-card" style="padding: 20px;">
+            <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Avg Response Time</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #2563EB; margin-top: 4px;">&lt; 2.4 Hours</div>
+            <span style="font-size: 0.775rem; color: var(--text-muted);">SLA for new compliance inquiries</span>
           </div>
         </div>
 
-        <div style="display: flex; items-center; gap: 10px;">
-          <button id="btn-export-csv" class="btn" style="background: rgba(0, 102, 51, 0.1); color: var(--color-primary); border: 1px solid var(--border-accent);">
-            <i data-lucide="download"></i> Export CSV
-          </button>
-          <button id="btn-seed-lead" class="btn btn-primary">
-            <i data-lucide="plus-circle"></i> Add Test Lead
-          </button>
-        </div>
-      </div>
+        <!-- Charts Grid (2x2 Layout) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px;">
+          <!-- Chart 1: Pipeline Breakdown (Doughnut) -->
+          <div class="glass-card" style="padding: 24px; border-radius: var(--radius-md);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+              <h3 style="font-size: 1.1rem; font-weight: 700;">Lead Pipeline Breakdown</h3>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Real-Time Firestore</span>
+            </div>
+            <div style="height: 280px; position: relative;">
+              <canvas id="chart-pipeline"></canvas>
+            </div>
+          </div>
 
-      <!-- Leads Table Container -->
-      <div class="table-wrapper">
-        <table class="crm-table">
-          <thead>
-            <tr>
-              <th>Client / Company</th>
-              <th>Contact Details</th>
-              <th>Service & Source</th>
-              <th>State Hub</th>
-              <th>Submission Date</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="crm-leads-tbody">
-            <!-- Dynamically populated from Firestore -->
-          </tbody>
-        </table>
+          <!-- Chart 2: Service Request Demand (Bar Chart) -->
+          <div class="glass-card" style="padding: 24px; border-radius: var(--radius-md);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+              <h3 style="font-size: 1.1rem; font-weight: 700;">Service Category Demand</h3>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">By Inquiries</span>
+            </div>
+            <div style="height: 280px; position: relative;">
+              <canvas id="chart-services"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 3: Regional State Hub Breakdown (Bar Chart) -->
+          <div class="glass-card" style="padding: 24px; border-radius: var(--radius-md);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+              <h3 style="font-size: 1.1rem; font-weight: 700;">Regional State Volume</h3>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">12 Economic Hubs</span>
+            </div>
+            <div style="height: 280px; position: relative;">
+              <canvas id="chart-states"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 4: Lead Acquisition Velocity (Line Chart) -->
+          <div class="glass-card" style="padding: 24px; border-radius: var(--radius-md);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+              <h3 style="font-size: 1.1rem; font-weight: 700;">Lead Acquisition Trend</h3>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Recent Activity</span>
+            </div>
+            <div style="height: 280px; position: relative;">
+              <canvas id="chart-trend"></canvas>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </div>
