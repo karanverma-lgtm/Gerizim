@@ -40,6 +40,7 @@
         <li><a href="#clientele" class="nav-link">Clientele</a></li>
         <li><a href="#presence" class="nav-link">Pan-India</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="/admin.html" class="nav-link" style="color: var(--color-accent); font-weight: 700;"><i data-lucide="lock" style="width: 14px; vertical-align: middle;"></i> Admin CRM</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -608,30 +609,60 @@
 
         <div class="glass-card contact-form-card">
           <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Send Us a Message</h3>
-          <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
-            <div class="form-group">
-              <label class="form-label" for="contact-name">Full Name *</label>
-              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Rajesh Sharma" required>
+          <form id="contact-form" style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Rajesh Sharma" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Corporate Email *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">Phone Number *</label>
+                <input type="tel" id="contact-phone" class="form-input" placeholder="+91 98765 43210" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-company">Company / Organization *</label>
+                <input type="text" id="contact-company" class="form-input" placeholder="e.g. Acme Enterprises Pvt Ltd" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+              <div class="form-group">
+                <label class="form-label" for="contact-service">Service Required</label>
+                <select id="contact-service" class="form-select">
+                  <option value="Statutory Compliance Management">Statutory Compliance Management</option>
+                  <option value="HR & Payroll Outsourcing">HR & Payroll Outsourcing</option>
+                  <option value="Recruitment / Executive Search">Recruitment / Executive Search</option>
+                  <option value="License Procurement & RoC Setup">License Procurement & RoC Setup</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-state">State / Operating Hub</label>
+                <select id="contact-state" class="form-select">
+                  <option value="Delhi NCR">Delhi NCR</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Other / Multi-State">Other / Multi-State</option>
+                </select>
+              </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="contact-email">Corporate Email *</label>
-              <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="contact-service">Service Required</label>
-              <select id="contact-service" class="form-select">
-                <option value="compliance">Statutory Compliance Management</option>
-                <option value="payroll">HR & Payroll Outsourcing</option>
-                <option value="recruitment">Recruitment / Executive Search</option>
-                <option value="licenses">License Procurement & RoC Setup</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="contact-msg">Message / Requirements</label>
-              <textarea id="contact-msg" class="form-input" rows="4" placeholder="Tell us about your organization and compliance needs..."></textarea>
+              <label class="form-label" for="contact-msg">Message / Specific Requirements</label>
+              <textarea id="contact-msg" class="form-input" rows="3" placeholder="Tell us about your organization headcount and compliance needs..."></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">

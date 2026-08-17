@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerizim Admin CRM Panel | Lead & Client Management</title>
+  <meta name="description" content="Official Gerizim HR Solutions Admin CRM Panel for managing client leads, statutory audit queries, and enterprise consultations.">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="icon" type="image/png" href="/gerizim_logo_transparent.png">
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    /* Admin Specific Styling */
+    .admin-body {
+      background: var(--bg-main);
+      min-height: 100vh;
+    }
+    
+    .admin-login-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      background: radial-gradient(circle at 50% 30%, rgba(144, 193, 38, 0.15) 0%, rgba(0, 102, 51, 0.08) 60%, transparent 100%);
+    }
+
+    .admin-login-card {
+      width: 100%;
+      max-width: 440px;
+      padding: 40px 32px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1.5px solid var(--border-accent);
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+
+    [data-theme="dark"] .admin-login-card {
+      background: rgba(17, 24, 39, 0.85);
+    }
+
+    .crm-header-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-nav);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 16px 0;
+    }
+
+    .crm-nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .crm-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .crm-kpi-card {
+      padding: 20px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .crm-kpi-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(144, 193, 38, 0.15);
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    [data-theme="dark"] .crm-kpi-icon {
+      color: var(--color-accent);
+    }
+
+    .crm-kpi-value {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--text-main);
+    }
+
+    .crm-control-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding: 16px;
+      border-radius: var(--radius-md);
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .crm-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .crm-table th {
+      background: rgba(0, 102, 51, 0.06);
+      padding: 14px 18px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-main);
+      border-bottom: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+
+    [data-theme="dark"] .crm-table th {
+      background: rgba(31, 41, 55, 0.8);
+    }
+
+    .crm-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: middle;
+    }
+
+    .crm-table tr:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.775rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .status-new { background: rgba(59, 130, 246, 0.15); color: #2563EB; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .status-in-progress { background: rgba(245, 158, 11, 0.15); color: #D97706; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .status-contacted { background: rgba(147, 51, 234, 0.15); color: #7C3AED; border: 1px solid rgba(147, 51, 234, 0.3); }
+    .status-converted { background: rgba(16, 185, 129, 0.15); color: #059669; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .status-archived { background: rgba(107, 114, 128, 0.15); color: #4B5563; border: 1px solid rgba(107, 114, 128, 0.3); }
+
+    /* Modal Drawer */
+    .lead-detail-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lead-detail-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content-card {
+      width: 100%;
+      max-width: 650px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 32px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+  </style>
+</head>
+<body class="admin-body">
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-follower" id="custom-cursor-follower"></div>
+
+  <!-- VIEW 1: ADMIN LOGIN VIEW -->
+  <div id="login-view" class="admin-login-wrapper">
+    <div class="glass-card admin-login-card">
+      <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+        <img src="/gerizim_logo_transparent.png" alt="Gerizim HR Emblem" style="width: 54px; height: 54px;">
+      </div>
+      
+      <h2 style="font-size: 1.6rem; margin-bottom: 6px;">Admin Portal Login</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Gerizim HR Solutions Lead Management CRM</p>
+
+      <form id="admin-login-form" style="display: flex; flex-direction: column; gap: 18px; text-align: left;">
+        <div class="form-group">
+          <label class="form-label" for="login-username">Admin Username</label>
+          <input type="text" id="login-username" class="form-input" placeholder="Enter username" required value="root">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-password">Password</label>
+          <input type="password" id="login-password" class="form-input" placeholder="Enter password" required value="toor">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+          <i data-lucide="lock"></i> Access Admin CRM Dashboard
+        </button>
+      </form>
+
+      <div style="margin-top: 24px; padding: 10px; background: rgba(144, 193, 38, 0.12); border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-primary); font-weight: 600;">
+        <i data-lucide="key" style="width: 14px; vertical-align: middle;"></i> Verified Credentials: Username: <code>root</code> | Password: <code>toor</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW 2: ADMIN CRM DASHBOARD VIEW -->
+  <div id="dashboard-view" style="display: none;">
+    <!-- Top Navigation Header -->
+    <header class="crm-header-nav">
+      <div class="container crm-nav-container">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="/gerizim_logo_transparent.png" alt="Gerizim HR" style="width: 36px; height: 36px;">
+          <div>
+            <h1 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary); line-height: 1;">Gerizim Admin CRM</h1>
+            <span style="font-size: 0.725rem; color: var(--color-accent); font-weight: 700; letter-spacing: 0.3px;">Live Firestore Database</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(16, 185, 129, 0.12); border-radius: var(--radius-full); font-size: 0.775rem; color: #059669; font-weight: 700;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+            <span>Firestore Sync Active</span>
+          </div>
+
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+            <i data-lucide="moon" id="theme-icon"></i>
+          </button>
+
+          <button id="btn-admin-logout" class="btn" style="padding: 8px 16px; font-size: 0.85rem; background: rgba(239, 68, 68, 0.1); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.3);">
+            <i data-lucide="log-out" style="width: 16px;"></i> Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main CRM Content Container -->
+    <main class="container" style="padding-top: 24px; padding-bottom: 60px;">
+      <!-- KPI Stats Grid -->
+      <div class="crm-kpi-grid">
+        <div class="glass-card crm-kpi-card">
+          <div class="crm-kpi-icon">
+            <i data-lucide="inbox"></i>
+          </div>
+          <div>
+            <div class="crm-kpi-value" id="kpi-total-leads">0</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Total Enquiries</div>
+          </div>
+        </div>
+
+        <div class="glass-card crm-kpi-card">
+          <div class="crm-kpi-icon" style="background: rgba(59, 130, 246, 0.15); color: #2563EB;">
+            <i data-lucide="bell"></i>
+          </div>
+          <div>
+            <div class="crm-kpi-value" id="kpi-new-leads" style="color: #2563EB;">0</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">New Enquiries</div>
+          </div>
+        </div>
+
+        <div class="glass-card crm-kpi-card">
+          <div class="crm-kpi-icon" style="background: rgba(245, 158, 11, 0.15); color: #D97706;">
+            <i data-lucide="loader"></i>
+          </div>
+          <div>
+            <div class="crm-kpi-value" id="kpi-in-progress" style="color: #D97706;">0</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">In Progress</div>
+          </div>
+        </div>
+
+        <div class="glass-card crm-kpi-card">
+          <div class="crm-kpi-icon" style="background: rgba(16, 185, 129, 0.15); color: #059669;">
+            <i data-lucide="check-circle-2"></i>
+          </div>
+          <div>
+            <div class="crm-kpi-value" id="kpi-converted" style="color: #059669;">0</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Converted Clients</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action & Filter Toolbar -->
+      <div class="glass-card crm-control-bar">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; flex: 1;">
+          <div class="search-box" style="position: relative; flex: 1; min-width: 240px;">
+            <i data-lucide="search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; color: var(--text-muted);"></i>
+            <input type="text" id="crm-search-input" class="form-input" placeholder="Search by name, company, email, or service..." style="padding-left: 38px;">
+          </div>
+
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="status-filter-pills">
+            <button class="filter-pill active" data-status="ALL">All</button>
+            <button class="filter-pill" data-status="New">New</button>
+            <button class="filter-pill" data-status="In Progress">In Progress</button>
+            <button class="filter-pill" data-status="Contacted">Contacted</button>
+            <button class="filter-pill" data-status="Converted">Converted</button>
+          </div>
+        </div>
+
+        <div style="display: flex; items-center; gap: 10px;">
+          <button id="btn-export-csv" class="btn" style="background: rgba(0, 102, 51, 0.1); color: var(--color-primary); border: 1px solid var(--border-accent);">
+            <i data-lucide="download"></i> Export CSV
+          </button>
+          <button id="btn-seed-lead" class="btn btn-primary">
+            <i data-lucide="plus-circle"></i> Add Test Lead
+          </button>
+        </div>
+      </div>
+
+      <!-- Leads Table Container -->
+      <div class="table-wrapper">
+        <table class="crm-table">
+          <thead>
+            <tr>
+              <th>Client / Company</th>
+              <th>Contact Details</th>
+              <th>Service & Source</th>
+              <th>State Hub</th>
+              <th>Submission Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="crm-leads-tbody">
+            <!-- Dynamically populated from Firestore -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- LEAD DETAILS & NOTES MODAL -->
+  <div id="lead-modal" class="lead-detail-modal">
+    <div class="modal-content-card">
+      <button id="modal-close-x" style="position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 1.5rem; color: var(--text-muted); cursor: pointer;">
+        <i data-lucide="x"></i>
+      </button>
+
+      <h3 style="font-size: 1.4rem; margin-bottom: 4px;" id="modal-client-name">Lead Details</h3>
+      <span style="font-size: 0.825rem; color: var(--color-accent); font-weight: 600;" id="modal-lead-id">ID: --</span>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; padding: 16px; background: var(--bg-card-hover); border-radius: var(--radius-sm);">
+        <div>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Company</span>
+          <div style="font-weight: 700; font-size: 0.95rem;" id="modal-company">--</div>
+        </div>
+        <div>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Service Required</span>
+          <div style="font-weight: 700; font-size: 0.95rem;" id="modal-service">--</div>
+        </div>
+        <div>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Email Address</span>
+          <div style="font-weight: 600; font-size: 0.9rem;" id="modal-email">--</div>
+        </div>
+        <div>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Phone Number</span>
+          <div style="font-weight: 600; font-size: 0.9rem;" id="modal-phone">--</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 6px;">Client Message / Consultation Request</span>
+        <div style="padding: 14px; background: var(--bg-main); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.9rem; line-height: 1.5;" id="modal-message">--</div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <label class="form-label" for="modal-status-select">Update Lead Pipeline Status</label>
+        <select id="modal-status-select" class="form-select">
+          <option value="New">New Enquiry</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Contacted">Contacted / Call Completed</option>
+          <option value="Converted">Converted Client</option>
+          <option value="Archived">Archived / Closed</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <label class="form-label" for="modal-notes-input">Internal CRM Executive Notes</label>
+        <textarea id="modal-notes-input" class="form-input" rows="3" placeholder="Add follow-up notes, audit requirements, or consultation history..."></textarea>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 12px;">
+        <button id="btn-save-lead-changes" class="btn btn-primary">
+          <i data-lucide="save"></i> Save Changes to Firestore
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="/src/admin.js"></script>
+</body>
+</html>

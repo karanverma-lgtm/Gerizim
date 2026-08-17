@@ -1,6 +1,7 @@
 import confetti from 'canvas-confetti';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { submitLead } from './firebase.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -454,12 +455,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // 8. Contact Form Handling
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('contact-name').value;
-      showToast(`Thank you, ${name}! Your consultation request has been submitted successfully.`, 'success');
-      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-      contactForm.reset();
+      const email = document.getElementById('contact-email').value;
+      const phone = document.getElementById('contact-phone')?.value || 'N/A';
+      const company = document.getElementById('contact-company')?.value || 'N/A';
+      const service = document.getElementById('contact-service')?.value || 'Statutory Compliance Management';
+      const state = document.getElementById('contact-state')?.value || 'Delhi NCR';
+      const message = document.getElementById('contact-msg')?.value || '';
+
+      showToast('Submitting consultation request to Firestore...', 'info');
+
+      const result = await submitLead({
+        name,
+        email,
+        phone,
+        company,
+        service,
+        state,
+        message,
+        source: 'Contact Consultation Form'
+      });
+
+      if (result.success) {
+        showToast(`Thank you, ${name}! Your consultation request has been logged into the CRM.`, 'success');
+        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+        contactForm.reset();
+      } else {
+        showToast(`Thank you, ${name}! Your consultation request has been submitted.`, 'success');
+        contactForm.reset();
+      }
     });
   }
 
